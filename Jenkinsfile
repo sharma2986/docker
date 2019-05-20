@@ -4,14 +4,14 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        git 'https://github.com/sharma2986/docker/'
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("dockerfile")
+        app = docker.build(".")
     }
 
     stage('Test image') {
@@ -22,4 +22,5 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-    
+
+    }
