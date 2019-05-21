@@ -19,4 +19,4 @@ ADD test.html /var/www/html/
 
 EXPOSE 80
 
-CMD /root/run_apache.sh
+CMD /root/run_apache.sh &
