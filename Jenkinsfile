@@ -4,7 +4,7 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        git 'https://github.com/sharma2986/docker/'
+        checkout scm
     }
 
     stage('Build image') {
@@ -15,11 +15,9 @@ node {
     }
 
     stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-
+        
         app.inside {
-            sh 'echo "Tests passed"'
+            sh 'pwd;ls -lrt'
         }
     }
 
