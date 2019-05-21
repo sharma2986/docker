@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 # Install dependencies
 RUN apt-get update
 RUN apt-get -y install apache2
+RUN apt-get -y install vim
 
 # Install apache and write hello world message
 RUN echo 'Hello World!' > /var/www/html/index.html
