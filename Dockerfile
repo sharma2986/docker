@@ -13,6 +13,8 @@ RUN echo 'mkdir -p /var/run/apache2' >> /root/run_apache.sh
 RUN echo 'mkdir -p /var/lock/apache2' >> /root/run_apache.sh
 RUN echo '/usr/sbin/apache2 -D FOREGROUND' >> /root/run_apache.sh
 RUN chmod 755 /root/run_apache.sh
+#
+ADD test.html /var/www/html/
 
 EXPOSE 80
 
