@@ -16,8 +16,8 @@ node {
     stage('Push image') {
     /* Push Image to ECR; */
   docker.withRegistry('https://431226684774.dkr.ecr.eu-west-1.amazonaws.com', 'ecr:eu-west-1:ECR-docker') {
-     app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+    docker.image(app).push("${env.BUILD_NUMBER}")
+            
         }
     }
 
